@@ -1,0 +1,19 @@
+.post-header, .post-form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.button-wrap {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .button-wrap {
+    width: 50%
+  }
+}

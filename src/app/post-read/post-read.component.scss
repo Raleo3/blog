@@ -1,0 +1,25 @@
+mat-card {
+    margin: 10px;
+
+    .mat-card-header-text > .mat-card-title {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    mat-card-subtitle {
+        text-align: left;
+    }
+
+    mat-card-content{
+        margin: 10px 16px;
+        text-align: left;
+
+        &.mat-card-content {
+            font-size: 1rem;
+        }
+    }
+
+    mat-card-actions {
+        text-align: right;
+    }
+}

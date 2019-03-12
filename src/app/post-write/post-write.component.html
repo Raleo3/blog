@@ -1,0 +1,36 @@
+<!-- If Post ID...load up, otherwise do NOT...should accept one or none -->
+<section>
+    <div class='post-header'>
+        <ng-container *ngIf="isNewPost; else editingPost">
+            <h3>New Post</h3>
+        </ng-container>
+        <ng-template #editingPost>
+            <h3>Editing Post</h3>
+        </ng-template>
+    </div>
+    <div class='post-content'>
+        <form class="post-form">
+          <mat-form-field appearance="outline" floatLabel="always" class="post-field">
+            <mat-label>Title</mat-label>
+            <input matInput required placeholder="Title" [(ngModel)]="post.title" name="title-1">
+          </mat-form-field>
+          <mat-form-field appearance="outline" floatLabel="always" class="post-field">
+            <mat-label>Text</mat-label>
+            <textarea
+                matInput
+                required
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="8"
+                placeholder="Text"
+                [(ngModel)]="post.text"
+                name="text-1">
+            </textarea>
+          </mat-form-field>
+        </form>
+        <div class="button-wrap">
+            <button mat-raised-button color="primary" [disabled]="!post.title || !post.text" (click)="savePost()">Save Post</button>
+        </div>
+    </div>
+</section>
