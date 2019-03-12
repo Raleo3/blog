@@ -18,7 +18,6 @@ import { PostReadComponent } from './post-read/post-read.component';
 import { PostWriteComponent } from './post-write/post-write.component';
 
 import { PostsService } from './services/posts.service';
-import './rxjs-operators';
 
 
 @NgModule({
