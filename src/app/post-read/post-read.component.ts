@@ -24,9 +24,10 @@ export class PostReadComponent implements OnInit {
     this.route.params.subscribe(
       (params: {postId: number}) => {
         if (params.postId) {
-          this.postsService.getPost(params.postId).subscribe(post => {
-              this.post = post;
-          });
+          this.postsService.getPost(params.postId).subscribe(
+            (post: Post) => this.post = post,
+            (err: any) => console.log('err fetching post', err)
+          );
         }
       },
       (err: any) => console.log('route param error', err)
